@@ -2,7 +2,7 @@ package part2
 
 object Asserter {
 
-  case class AssertionException(message: String) extends RuntimeException(message) {
+  final case class AssertionException(message: String) extends RuntimeException(message) {
 
   }
 

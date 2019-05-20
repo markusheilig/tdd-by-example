@@ -27,5 +27,14 @@ class TestCaseTest(name: String) extends TestCase(name) {
     Asserter.assert("1 run, 1 failed", result.summary)
   }
 
+  def testSuite(): Unit = {
+    val suite = new TestSuite()
+    suite.add(new WasRun("testMethod"))
+    suite.add(new WasRun("testBrokenMethod"))
+    val result = new TestResult()
+    suite.run(result)
+    Asserter.assert("2 run, 1 failed", result.summary)
+  }
+
 }
 

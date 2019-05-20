@@ -8,8 +8,7 @@ class TestCase(name: String) {
   def tearDown(): Unit = {
   }
 
-  def run(): TestResult = {
-    val result = new TestResult()
+  def run(result: TestResult = new TestResult()): TestResult = {
     result.testStarted()
     setUp()
     try {

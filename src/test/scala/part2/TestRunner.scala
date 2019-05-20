@@ -3,12 +3,17 @@ package part2
 object TestRunner {
 
   def main(args: Array[String]): Unit = {
-    new AsserterTest("testAssertDoesNotThrowIfActualValueEqualsExpectedValue").run()
-    new AsserterTest("testAssertThrowsIfActualValueDoesNotEqualExpectedValue").run()
-    new TestCaseTest("testTemplateMethod").run()
-    new TestCaseTest("testResult").run()
-    new TestCaseTest("testFailedResult").run()
-    new TestCaseTest("testFailedResultFormatting").run()
+    val suite = new TestSuite()
+    suite.add(new AsserterTest("testAssertDoesNotThrowIfActualValueEqualsExpectedValue"))
+    suite.add(new AsserterTest("testAssertThrowsIfActualValueDoesNotEqualExpectedValue"))
+    suite.add(new TestCaseTest("testTemplateMethod"))
+    suite.add(new TestCaseTest("testResult"))
+    suite.add(new TestCaseTest("testFailedResult"))
+    suite.add(new TestCaseTest("testFailedResultFormatting"))
+    suite.add(new TestCaseTest("testSuite"))
+    val result = new TestResult()
+    suite.run(result)
+    println(result.summary)
   }
 
 }

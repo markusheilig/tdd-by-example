@@ -19,10 +19,10 @@ class AsserterTest(name: String) extends TestCase(name) {
       Asserter.assert("hello", "HELLO")
       throw new RuntimeException("Assert should have thrown an exception, but it didn't!")
     } catch {
-      case _@AssertionException("expected 'hello' but got 'HELLO'") =>
+      case _: AssertionException =>
       // that's what we expected
 
-      case unintentionalException =>
+      case unintentionalException: RuntimeException =>
         throw unintentionalException
     }
   }
