@@ -1,3 +1,5 @@
+package part1
+
 
 class Sum(var augend: Expression, var addend: Expression) extends Expression {
 

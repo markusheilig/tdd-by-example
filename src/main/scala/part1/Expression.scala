@@ -1,4 +1,4 @@
-
+package part1
 
 trait Expression {
   def times(multiplier: Int): Expression

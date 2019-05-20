@@ -1,3 +1,5 @@
+package part1
+
 
 class Pair(var from: String, var to: String) {
   override def equals(obj: Any): Boolean = {

@@ -1,9 +1,11 @@
+package part1
+
 import org.scalatest.{FlatSpec, Matchers}
 
 
 class MoneyTest extends FlatSpec with Matchers {
 
-  "Money" should "define equality" in {
+  "part1.Money" should "define equality" in {
     Money.dollar(5) shouldBe Money.dollar(5)
     Money.dollar(5) shouldNot be(Money.dollar(6))
     Money.franc(5) shouldNot be(Money.dollar(5))
@@ -36,7 +38,7 @@ class MoneyTest extends FlatSpec with Matchers {
     sum.addend shouldBe five
   }
 
-  "A Bank" should "reduce a sum" in {
+  "A part1.Bank" should "reduce a sum" in {
     val sum = new Sum(Money.dollar(3), Money.dollar(4))
     val bank = new Bank()
     val result = bank.reduce(sum, "USD")
@@ -69,7 +71,7 @@ class MoneyTest extends FlatSpec with Matchers {
     result shouldBe Money.dollar(10)
   }
 
-  "An Expression" should "reduce sums with money" in {
+  "An part1.Expression" should "reduce sums with money" in {
     val fiveBucks: Expression = Money.dollar(5)
     val tenFrancs: Expression = Money.franc(10)
     val bank = new Bank()
@@ -79,7 +81,7 @@ class MoneyTest extends FlatSpec with Matchers {
     result shouldBe Money.dollar(15)
   }
 
-  "A Sum" should "support multiplication" in {
+  "A part1.Sum" should "support multiplication" in {
     val fiveBucks: Expression = Money.dollar(5)
     val tenFrancs: Expression = Money.franc(10)
     val bank = new Bank()

@@ -1,3 +1,5 @@
+package part1
+
 
 class Bank() {
 

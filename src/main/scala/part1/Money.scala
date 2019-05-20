@@ -1,3 +1,5 @@
+package part1
+
 
 
 class Money(val amount: Int, private val _currency: String) extends Expression {
